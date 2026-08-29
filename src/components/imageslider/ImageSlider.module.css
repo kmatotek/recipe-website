@@ -1,0 +1,40 @@
+.container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  background-color: #f0f0f0;
+  padding: 15px 0;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  /* Use CSS variables to easily change gap and speed in one place */
+  --gap: 30px;
+  gap: var(--gap); 
+  
+  /* 25s makes it a smooth, steady pace. Lower = faster, Higher = slower */
+  animation: infiniteConveyor 170s linear infinite;
+}
+
+.floatingImage {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  /* Prevents the browser from squishing the images on smaller windows */
+  flex-shrink: 0; 
+}
+
+@keyframes infiniteConveyor {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves exactly half the width of the track.
+       We subtract half of the gap width so the pixel alignment is flawless when it snaps back. */
+    transform: translateX(calc(-50% - (var(--gap) / 2)));
+  }
+}
