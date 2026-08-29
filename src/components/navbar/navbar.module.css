@@ -43,7 +43,7 @@ body {
 
 .kopelogo {
   padding-left: 50px;
-  margin-right:-150px;
+  
   width: 100px;
   height: auto;
   object-fit: cover;
@@ -54,4 +54,26 @@ body {
   src: url('../../assets/fonts/Canda Tawa.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+/* unvisited link */
+a:link {
+  text-decoration: none;
+  color:rgb(48, 48, 48);
+}
+
+/* visited link */
+a:visited {
+  text-decoration: none;
+  color:rgb(48, 48, 48);
+}
+
+/* mouse over link */
+a:hover {
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  text-decoration: none;
 }
