@@ -1,0 +1,109 @@
+.mealSection {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 100px 0;
+
+  display: flex;
+  justify-content: center;
+
+  user-select: none;
+}
+
+
+/* Background colors */
+
+.light {
+  background-color: #faf9f6;
+}
+
+.green {
+  background-color: rgba(186, 203, 172, 0.2);
+}
+
+.cream {
+  background-color: #eee8dc;
+}
+
+
+/* Animated content */
+
+.content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 35px;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Heading */
+
+.heading {
+  text-align: center;
+}
+
+.heading h2 {
+  margin: 0;
+
+  font-family: 'Canda Tawa';
+  font-size: 52px;
+  font-weight: normal;
+  letter-spacing: 1px;
+
+  color: rgb(48, 48, 48);
+}
+
+
+/* Recipe button */
+
+.recipeButton {
+  -webkit-user-drag: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 30px;
+
+  border-radius: 30px;
+
+  background-color: rgb(48, 48, 48);
+  color: white !important;
+
+  font-family: 'Canda Tawa';
+  font-size: 20px;
+
+  text-decoration: none !important;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.recipeButton:hover {
+  background-color: rgb(70, 70, 70);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(42, 42, 42, 0.18);
+}
+
+.recipeButton:active {
+  transform: translateY(0);
+}

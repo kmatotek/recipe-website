@@ -1,0 +1,15 @@
+:root {
+  --background: #faf9f6;
+  --navbar-background: rgba(172, 195, 203, 0.543);
+  --meal-background: rgba(172, 195, 203, 0.20);
+  --text: rgb(48, 48, 48);
+  --button-background: rgb(48, 48, 48);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text);
+}
