@@ -25,8 +25,7 @@ dist-ssr
 
 # backend stuff
 
+bin
+obj
 .env
 *.env
-target/
-.idea/
-*.iml
