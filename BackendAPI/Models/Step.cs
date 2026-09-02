@@ -7,7 +7,7 @@ namespace BackendAPI.Models
     public class Step
     {
         [BsonElement("Step")]
-        [JsonPropertyName("Step")]
+        [JsonPropertyName("step")]
         public int StepNumber { get; set; }
         public string Instruction { get; set; } = String.Empty;
     }

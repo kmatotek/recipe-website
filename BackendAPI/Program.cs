@@ -23,6 +23,9 @@ builder.Services.AddSingleton<IMongoClient>(sp =>
 builder.Services.AddSingleton<RecipeService>();
 // Note: RecipeService can safely be a Singleton too since it only holds the thread-safe IMongoCollection reference.
 
+builder.Services.AddControllers();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,13 +40,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
-var booksGroup = app.MapGroup("/recipes");
-
-booksGroup.MapGet("/", async (RecipeService booksService) =>
-{
-    var books = await booksService.GetAsync();
-    return Results.Ok(books);
-});
+app.MapControllers();
 
 app.Run();

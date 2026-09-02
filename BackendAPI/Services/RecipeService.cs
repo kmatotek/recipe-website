@@ -17,4 +17,9 @@ public class RecipeService
 
     public async Task<List<Recipe>> GetAsync() =>
         await _recipesCollection.Find(_ => true).ToListAsync();
+
+    public async Task<List<Recipe>> GetByCategoryAsync(string category)
+    {
+        return await _recipesCollection.Find(recipe => recipe.Category.Equals(category)).ToListAsync();
+    }
 }

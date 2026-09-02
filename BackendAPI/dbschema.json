@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recipe",
+  "type": "object",
+  "required": [
+    "Name",
+    "Title",
+    "Description",
+    "Category",
+    "Tags",
+    "Image",
+    "PrepTime",
+    "CookTime",
+    "Servings",
+    "Ingredients",
+    "Steps"
+  ],
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Category": {
+      "type": "string"
+    },
+    "Tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Image": {
+      "type": "string"
+    },
+    "PrepTime": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "CookTime": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "Servings": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "Ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "Quantity",
+          "Unit",
+          "Name"
+        ],
+        "properties": {
+          "Quantity": {
+            "type": "number",
+            "minimum": 0
+          },
+          "Unit": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "Step",
+          "Instruction"
+        ],
+        "properties": {
+          "Step": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "Instruction": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+######
+
+example:
+
+{
+  "_id": {
+    "$oid": "6a9763436b8bcc3a51c8b60f"
+  },
+  "Name": "chicken-thighs",
+  "Title": "Chicken Thighs",
+  "Description": "Crispy, flavorful oven-baked chicken thighs marinated in buttermilk and coated in seasoned breadcrumbs.",
+  "Category": "dinner",
+  "Tags": [
+    "dinner",
+    "chicken",
+    "chicken thighs",
+    "crispy",
+    "oven-baked",
+    "easy"
+  ],
+  "Image": "/images/chicken-thighs.jpg",
+  "PrepTime": 20,
+  "CookTime": 30,
+  "Servings": 4,
+  "Ingredients": [
+    {
+      "Quantity": 2,
+      "Unit": "Lbs.",
+      "Name": "Chicken Thighs (Boneless)"
+    },
+    {
+      "Quantity": 2,
+      "Unit": "cups",
+      "Name": "Buttermilk"
+    },
+    {
+      "Quantity": 1.5,
+      "Unit": "cups",
+      "Name": "Breadcrumbs"
+    },
+    {
+      "Quantity": 2,
+      "Unit": "tsp",
+      "Name": "Garlic Powder"
+    },
+    {
+      "Quantity": 2,
+      "Unit": "tsp",
+      "Name": "Onion Powder"
+    },
+    {
+      "Quantity": 5,
+      "Unit": "tsp",
+      "Name": "Paprika"
+    },
+    {
+      "Quantity": 1,
+      "Unit": "tsp",
+      "Name": "Salt"
+    },
+    {
+      "Quantity": 1,
+      "Unit": "tsp",
+      "Name": "Old Bay"
+    },
+    {
+      "Quantity": 1,
+      "Unit": "tsp",
+      "Name": "Tumeric"
+    },
+    {
+      "Quantity": 1,
+      "Unit": "Tsp.",
+      "Name": "Ground Pepper"
+    },
+    {
+      "Quantity": 0,
+      "Unit": "",
+      "Name": "Butter (Sliced)"
+    },
+    {
+      "Quantity": 0,
+      "Unit": "",
+      "Name": "Olive Oil"
+    }
+  ],
+  "Steps": [
+    {
+      "Step": 1,
+      "Instruction": "Place the chicken thighs in a bowl and soak them in buttermilk for 4–24 hours. The longer they marinate, the more flavorful they will be."
+    },
+    {
+      "Step": 2,
+      "Instruction": "Preheat the oven to 450°F and line a baking sheet with parchment paper."
+    },
+    {
+      "Step": 3,
+      "Instruction": "In a medium bowl, combine the breadcrumbs, garlic powder, onion powder, paprika, turmeric, old Bay, salt, and pepper. Mix until well combined."
+    },
+    {
+      "Step": 4,
+      "Instruction": "Remove each chicken thigh from the buttermilk, allowing any excess to drip off. Coat each thigh evenly in the breadcrumb mixture."
+    },
+    {
+      "Step": 5,
+      "Instruction": "Place the coated chicken thighs on the prepared baking sheet. Drizzle a small amount of olive oil underneath each piece of chicken."
+    },
+    {
+      "Step": 6,
+      "Instruction": "Once all the chicken thighs are on the baking sheet, drizzle a little more olive oil over each piece and place a small slice of butter on top."
+    },
+    {
+      "Step": 7,
+      "Instruction": "Bake for 15 minutes, then flip the chicken thighs and bake for another 15 minutes. Broil for 1–2 minutes at the end, or until the coating is golden and crispy."
+    }
+  ]
+}
