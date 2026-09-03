@@ -22,4 +22,16 @@ public class RecipeService
     {
         return await _recipesCollection.Find(recipe => recipe.Category.Equals(category)).ToListAsync();
     }
+
+    public async Task<long> GetNumOfDocumentsForCategory(string category)
+    {
+        return await _recipesCollection.CountDocumentsAsync(recipe => recipe.Category.Equals(category));
+    }
+
+    // Get recipe by the 'Name' field
+    public async Task<List<Recipe>> GetRecipesByName(string name)
+    {
+        return await _recipesCollection.Find(recipe => recipe.Name.Equals(name)).ToListAsync();
+    }
+
 }

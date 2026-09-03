@@ -43,7 +43,37 @@ namespace BackendAPI.Controllers
             return Ok(await _recipeService.GetByCategoryAsync("dessert"));
         }
 
-        // add enpoints to get a single recipe by name
+        // get a single recipe by name
+        [HttpGet("getByName/{name}")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipeByName([FromRoute] string name)
+        {
+            var recipes = await _recipeService.GetRecipesByName(name);
 
+            if (recipes.Count() == 1) return Ok(recipes);
+
+            return BadRequest("Length of result was not 1");
+        }
+
+
+        // get number of documents for breakfast
+        [HttpGet("breakfast/amount")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsBreakfast()
+        {
+            return Ok(await _recipeService.GetNumOfDocumentsForCategory("breakfast"));
+        }
+
+        // get number of documents for dinner
+        [HttpGet("dinner/amount")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsDinner()
+        {
+            return Ok(await _recipeService.GetNumOfDocumentsForCategory("dinner"));
+        }
+
+        // get number of documents for desserts
+        [HttpGet("dessert/amount")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsDesserts()
+        {
+            return Ok(await _recipeService.GetNumOfDocumentsForCategory("dessert"));
+        }
     }
 }
