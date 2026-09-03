@@ -1,4 +1,3 @@
-import ImageSlider from "../components/imageslider/ImageSlider";
 import Navbar from "../components/navbar/navbar";
 import MealSection from "../components/mealsection/MealSection";
 

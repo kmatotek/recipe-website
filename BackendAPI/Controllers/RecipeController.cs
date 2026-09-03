@@ -75,5 +75,7 @@ namespace BackendAPI.Controllers
         {
             return Ok(await _recipeService.GetNumOfDocumentsForCategory("dessert"));
         }
+
+        // maybe make endpoint to get all images for a certain category??
     }
 }
