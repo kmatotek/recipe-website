@@ -55,27 +55,21 @@ namespace BackendAPI.Controllers
         }
 
 
-        // get number of documents for breakfast
-        [HttpGet("breakfast/amount")]
-        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsBreakfast()
+        // get number of documents for breakfast/dinner/dessert
+        [HttpGet("amount/{category}")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsForCategory([FromRoute] string category)
         {
-            return Ok(await _recipeService.GetNumOfDocumentsForCategory("breakfast"));
+            return Ok(await _recipeService.GetNumOfDocumentsForCategory(category));
         }
 
-        // get number of documents for dinner
-        [HttpGet("dinner/amount")]
-        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsDinner()
+
+        // get all images for a category
+        // get number of documents for breakfast/dinner/dessert
+        [HttpGet("images/{category}")]
+        public async Task<ActionResult<IEnumerable<Recipe>>> GetImagePathsForCategory([FromRoute] string category)
         {
-            return Ok(await _recipeService.GetNumOfDocumentsForCategory("dinner"));
+            return Ok(await _recipeService.GetImagePathsForCategory(category));
         }
 
-        // get number of documents for desserts
-        [HttpGet("dessert/amount")]
-        public async Task<ActionResult<IEnumerable<Recipe>>> GetNumDocumentsDesserts()
-        {
-            return Ok(await _recipeService.GetNumOfDocumentsForCategory("dessert"));
-        }
-
-        // maybe make endpoint to get all images for a certain category??
     }
 }

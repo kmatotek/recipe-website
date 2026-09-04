@@ -34,4 +34,11 @@ public class RecipeService
         return await _recipesCollection.Find(recipe => recipe.Name.Equals(name)).ToListAsync();
     }
 
+    // get image paths for a category
+    public async Task<List<string>> GetImagePathsForCategory(string category)
+    {
+        List<Recipe> recipes = await GetByCategoryAsync(category);
+
+        return recipes.Select(recipe => recipe.Image).ToList();
+    }
 }

@@ -3,9 +3,14 @@ import api from './axiosInstance'
 const recipeService = {
 
     // GET all recipes
-
     getAllRecipes: async () => {
         const response = await api.get('/recipes');
+        return response.data;
+    },
+
+    // GET images by category 
+    getImagesByCategory: async (category) => {
+        const response = await api.get(`recipes/images/${category}`);
         return response.data;
     }
 }

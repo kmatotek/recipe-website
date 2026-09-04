@@ -1,7 +1,9 @@
 import Navbar from "../components/navbar/navbar";
 import MealSection from "../components/mealsection/MealSection";
 
-import { breakfastImages } from "../components/imageslider/Images";
+import recipeService from "../api/RecipeService";
+
+const breakfastImages = await recipeService.getImagesByCategory("breakfast");
 
 function Home() {
   return (
