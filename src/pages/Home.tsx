@@ -10,9 +10,9 @@ function Home() {
     <>
       <Navbar></Navbar>
       <MealSection
-        title="breakfast & lunch"
+        title="breakfast"
         images={breakfastImages}
-        buttonLink="/breakfast_lunch"
+        buttonLink="/breakfast"
         variant="cream"
       />
 

@@ -13,8 +13,8 @@ export default function Navbar() {
 
       <ul className={styles.navbar}>
         <li>
-          <Link to="/breakfast_lunch" draggable="false">
-            BREAKFAST & LUNCH
+          <Link to="/breakfast" draggable="false">
+            BREAKFAST
           </Link>
         </li>
         <li>
