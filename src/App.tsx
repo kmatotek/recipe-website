@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import Breakfast from "./pages/Breakfast.tsx";
-import Appetizers_Dinner from "./pages/Appetizers_Dinner.tsx";
-import Desserts_Baked_Goods from "./pages/Desserts_Baked_Goods.tsx";
 import styles from "./App.module.css";
+import Dessert from "./pages/Dessert.tsx";
+import Dinner from "./pages/Dinner.tsx";
 
 export default function App() {
   return (
@@ -11,11 +11,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/breakfast" element={<Breakfast />} />
-        <Route path="/appetizers_dinner" element={<Appetizers_Dinner />} />
-        <Route
-          path="/desserts_baked_goods"
-          element={<Desserts_Baked_Goods />}
-        />
+        <Route path="/dinner" element={<Dinner />} />
+        <Route path="/dessert" element={<Dessert />} />
       </Routes>
     </BrowserRouter>
   );

@@ -18,13 +18,13 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/appetizers_dinner" draggable="false">
-            APPETIZERS & DINNER
+          <Link to="/dinner" draggable="false">
+            DINNER
           </Link>
         </li>
         <li>
-          <Link to="/desserts_baked_goods" draggable="false">
-            DESSERTS & BAKED GOODS
+          <Link to="/dessert" draggable="false">
+            DESSERTS
           </Link>
         </li>
       </ul>

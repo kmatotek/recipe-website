@@ -4,6 +4,8 @@ import MealSection from "../components/mealsection/MealSection";
 import recipeService from "../api/RecipeService";
 
 const breakfastImages = await recipeService.getImagesByCategory("breakfast");
+const dinnerImages = await recipeService.getImagesByCategory("dinner");
+const dessertImages = await recipeService.getImagesByCategory("dessert");
 
 function Home() {
   return (
@@ -17,16 +19,16 @@ function Home() {
       />
 
       <MealSection
-        title="appetizers & dinner"
-        images={breakfastImages}
-        buttonLink="/appetizers_dinner"
+        title="dinner"
+        images={dinnerImages}
+        buttonLink="/dinner"
         variant="light"
       />
 
       <MealSection
-        title="desserts & baked goods"
-        images={breakfastImages}
-        buttonLink="/desserts_baked_goods"
+        title="desserts"
+        images={dessertImages}
+        buttonLink="/dessert"
         variant="green"
       />
     </>

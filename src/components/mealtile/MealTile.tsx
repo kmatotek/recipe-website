@@ -1,21 +1,24 @@
+import type { Recipe } from "../../types/Recipe";
 import styles from "./MealTile.module.css";
 
-function MealTile({ imageSrc }) {
+interface MealTileProps {
+  recipe: Recipe;
+}
+
+function MealTile({ recipe }: MealTileProps) {
+  const totalTime = recipe.prepTime + recipe.cookTime;
+
   return (
     <div className={styles.mealtilecard}>
       <img
         className={styles.mealtileimage}
-        src={imageSrc}
-        alt="TODO: use food name"
+        src={recipe.image}
+        alt={recipe.name}
       />
-      <p className={styles.mealtilename}>food name</p>
-      <p className={styles.mealtiletime}>30 min</p>
+      <p className={styles.mealtilename}>{recipe.title}</p>
+      <p className={styles.mealtiletime}>{totalTime} mins</p>
     </div>
   );
 }
 
 export default MealTile;
-
-// picture
-// name
-// ad background card
