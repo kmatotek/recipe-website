@@ -17,6 +17,12 @@
     aspect-ratio: 5 / 4;
     border-radius: 15px;
     object-fit: cover;
+    
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .mealtilename {
@@ -35,6 +41,11 @@
     font-size: 22px;
     color: #67affd;
     margin: -10px 0px 10px 0px;
+}
+
+.mealtilelink:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
  /* color: #89a0fc; */
