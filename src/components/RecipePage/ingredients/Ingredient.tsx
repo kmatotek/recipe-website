@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Ingredient as IngredientType } from "../../../types/Recipe";
 import styles from "./Ingredient.module.css";
+import { formatQuantity } from "../../../utils/FormatQuantity";
 
 type IngredientProps = {
   ingredient: IngredientType;
@@ -14,6 +15,7 @@ export default function Ingredient({
   const [checked, setChecked] = useState(false);
 
   const quantity = ingredient.quantity * multiplier;
+  const formattedQuantity = formatQuantity(quantity);
 
   return (
     <li className={styles.ingredient}>
@@ -26,7 +28,8 @@ export default function Ingredient({
         />
 
         <span className={checked ? styles.checked : styles.ingredienttext}>
-          {quantity} {ingredient.unit} {ingredient.name}
+          {quantity > 0 && `${formattedQuantity} ${ingredient.unit} `}
+          {ingredient.name}
         </span>
       </label>
     </li>

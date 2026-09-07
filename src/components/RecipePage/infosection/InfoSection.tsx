@@ -16,22 +16,22 @@ export default function InfoSection({
   return (
     <section className={styles.infosection}>
       <div className={styles.infoitem}>
-        <p className={styles.infolabel}>Prep Time</p>
+        <p className={styles.infolabel}>prep</p>
         <p className={styles.infovalue}>{prepTime} min</p>
       </div>
 
       <div className={styles.infoitem}>
-        <p className={styles.infolabel}>Cook Time</p>
+        <p className={styles.infolabel}>cook</p>
         <p className={styles.infovalue}>{cookTime} min</p>
       </div>
 
       <div className={styles.infoitem}>
-        <p className={styles.infolabel}>Total Time</p>
+        <p className={styles.infolabel}>total</p>
         <p className={styles.infovalue}>{totalTime} min</p>
       </div>
 
       <div className={styles.infoitem}>
-        <p className={styles.infolabel}>Servings</p>
+        <p className={styles.infolabel}>servings</p>
         <p className={styles.infovalue}>{servings}</p>
       </div>
     </section>
