@@ -49,7 +49,7 @@ namespace BackendAPI.Controllers
         {
             var recipes = await _recipeService.GetRecipesByName(name);
 
-            if (recipes.Count() == 1) return Ok(recipes);
+            if (recipes.Count() == 1) return Ok(recipes[0]);
 
             return BadRequest("Length of result was not 1");
         }

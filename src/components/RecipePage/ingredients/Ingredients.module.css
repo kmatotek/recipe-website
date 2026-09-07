@@ -1,0 +1,46 @@
+.ingredients {
+    width: 100%;
+    max-width: 700px;
+    margin: 35px auto 0;
+    padding: 25px 30px 30px;
+
+    box-sizing: border-box;
+
+    background-color: rgba(232, 233, 233, 0.532);
+    /* MORE WHITE: background-color: rgba(255, 255, 255, 0.685);*/
+
+    border-radius: 15px;
+    box-shadow: 0px 3px 0px 0px rgba(183, 181, 181, 0.3);
+}
+
+
+.ingredientstitle {
+    margin: 0 0 20px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2d2d2d;
+}
+
+.ingredientlist {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    margin: 20px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+@media (max-width: 600px) {
+    .ingredients {
+        width: calc(100% - 30px);
+        padding: 20px;
+    }
+
+    .ingredientstitle {
+        font-size: 24px;
+    }
+}

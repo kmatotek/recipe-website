@@ -14,6 +14,12 @@ const recipeService = {
         return response.data;
     },
 
+    // get recipe by it's name
+    getRecipByName: async (name) => {
+        const response = await api.get(`recipes/getByName/${name}`)
+        return response.data;
+    },
+
     // GET images by category 
     getImagesByCategory: async (category) => {
         const response = await api.get(`recipes/images/${category}`);
