@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # backend stuff
-BackendAPI/appsettings.json
+backend/appsettings.json
 
 bin
 obj

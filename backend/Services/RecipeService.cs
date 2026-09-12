@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using BackendAPI.Models;
+using Backend.Models;
 
-namespace BackendAPI.Services;
+namespace Backend.Services;
 
 public class RecipeService
 {
