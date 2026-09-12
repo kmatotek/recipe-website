@@ -1,6 +1,6 @@
 using MongoDB.Bson;
 
-namespace BackendAPI.Models
+namespace Backend.Models
 {
     public class Recipe
     {

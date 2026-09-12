@@ -1,8 +1,8 @@
-using BackendAPI.Models;
-using BackendAPI.Services;
+using Backend.Models;
+using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BackendAPI.Controllers
+namespace Backend.Controllers
 {
     [Route("api/recipes")]
     [ApiController]
