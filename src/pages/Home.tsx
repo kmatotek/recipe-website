@@ -13,23 +13,20 @@ function Home() {
       <Navbar></Navbar>
       <MealSection
         title="breakfast"
-        images={breakfastImages}
-        buttonLink="/breakfast"
-        variant="cream"
+        backgroundImage={breakfastImages[0]}
+        link="/breakfast"
       />
 
       <MealSection
         title="dinner"
-        images={dinnerImages}
-        buttonLink="/dinner"
-        variant="light"
+        backgroundImage={dinnerImages[0]}
+        link="/dinner"
       />
 
       <MealSection
         title="desserts"
-        images={dessertImages}
-        buttonLink="/dessert"
-        variant="green"
+        backgroundImage={dessertImages[0]}
+        link="/dessert"
       />
     </>
   );

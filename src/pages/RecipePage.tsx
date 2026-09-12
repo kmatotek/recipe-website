@@ -39,26 +39,28 @@ export default function RecipePage() {
       <Navbar />
 
       <main className={styles.recipepage}>
-        <div className={styles.recipeheader}>
-          <h1 className={styles.recipetitle}>{recipe.title}</h1>
+        <div className={styles.recipecard}>
+          <div className={styles.recipeheader}>
+            <h1 className={styles.recipetitle}>{recipe.title}</h1>
 
-          <img
-            className={styles.recipeimage}
-            src={recipe.image}
-            alt={recipe.title}
-          />
+            <img
+              className={styles.recipeimage}
+              src={recipe.image}
+              alt={recipe.title}
+            />
 
-          <InfoSection
-            prepTime={recipe.prepTime}
-            cookTime={recipe.cookTime}
-            totalTime={recipe.prepTime + recipe.cookTime}
-            servings={recipe.servings}
-          />
+            <InfoSection
+              prepTime={recipe.prepTime}
+              cookTime={recipe.cookTime}
+              totalTime={recipe.prepTime + recipe.cookTime}
+              servings={recipe.servings}
+            />
+          </div>
+
+          <Ingredients ingredients={recipe.ingredients} />
+
+          <Instructions steps={recipe.steps} />
         </div>
-
-        <Ingredients ingredients={recipe.ingredients} />
-
-        <Instructions steps={recipe.steps} />
       </main>
     </>
   );
