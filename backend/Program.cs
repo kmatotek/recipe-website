@@ -25,8 +25,22 @@ builder.Services.AddSingleton<RecipeService>();
 
 builder.Services.AddControllers();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+    {
+        policy.WithOrigins(
+            "http://localhost:5173",
+            "https://happy-desert-06c30ce0f.3.azurestaticapps.net"
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
+
+app.UseCors("Frontend");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
