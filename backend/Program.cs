@@ -31,7 +31,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
             "http://localhost:5173",
-            "https://happy-desert-06c30ce0f.3.azurestaticapps.net"
+            "https://koperecipes.com"
         )
         .AllowAnyHeader()
         .AllowAnyMethod();
