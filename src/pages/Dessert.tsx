@@ -4,9 +4,9 @@ import styles from "./Breakfast.module.css";
 
 export default function Dessert() {
   return (
-    <body className={styles.recipebody}>
+    <div className={styles.recipebody}>
       <Navbar></Navbar>
       <MealGrid category={"dessert"} />
-    </body>
+    </div>
   );
 }

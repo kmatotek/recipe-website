@@ -1,38 +1,46 @@
+.navbarTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  gap: 35px;
+  flex-shrink: 0;
+}
+
 .navbar {
   list-style-type: none;
   font-size: 24px;
   display: flex;
-  gap: 100px; 
+  gap: 100px;
   user-select: none;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  padding: 0;               
-  margin: 0; 
+  flex: 1;
+  padding: 0;
+  margin: 0;
   height: 100px;
   z-index: 100;
-  top:0;
 }
 
 .navbar li {
   font-family: 'Canda Tawa';
-  color:rgb(48, 48, 48);
-
-  
+  color: rgb(48, 48, 48);
 }
-
 
 html, body {
   /* Prevents bouncing past the top and bottom of the page */
-  overscroll-behavior-y: none; 
+  overscroll-behavior-y: none;
 }
 
 .listContainer {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  position: sticky;
+  flex-direction: column;
   background-color: var(--navbar-background);
+  width: 100%;
+  min-height: 100px;
+  z-index: 100;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 .kopelogo {
@@ -42,6 +50,7 @@ html, body {
   height: auto;
   object-fit: cover;
   -webkit-user-drag: none;
+  flex-shrink: 0;
 }
 
 @font-face {
@@ -51,32 +60,79 @@ html, body {
   font-style: normal;
 }
 
-/* unvisited link */
 a:link {
   text-decoration: none;
-  color:rgb(48, 48, 48);
+  color: rgb(48, 48, 48);
 }
 
-/* visited link */
 a:visited {
   text-decoration: none;
-  color:rgb(48, 48, 48);
+  color: rgb(48, 48, 48);
 }
 
-/* mouse over link */
 a:hover {
   text-decoration: underline;
 }
 
-/* selected link */
 a:active {
   text-decoration: none;
 }
 
+/* Search button */
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  margin-right: 35px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: rgba(48, 48, 48, 0.7);
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition: color 0.2s ease;
+}
+
+.searchButton:hover {
+  color: rgb(48, 48, 48);
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    gap: 40px;
+    font-size: 22px;
+  }
+
+  .kopelogo {
+    padding-left: 25px;
+    width: 85px;
+  }
+
+  .searchButton {
+    margin-right: 20px;
+  }
+}
+
 @media (max-width: 768px) {
+  .navbarTop {
+    height: 65px;
+    gap: 10px;
+  }
+
   .navbar {
     gap: 25px;
     font-size: 18px;
+    height: 65px;
   }
 
   .kopelogo {
@@ -85,6 +141,12 @@ a:active {
   }
 
   .listContainer {
-    gap: 10px;
+    min-height: 65px;
+  }
+
+  .searchButton {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
   }
 }
